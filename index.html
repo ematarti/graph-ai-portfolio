@@ -84,16 +84,14 @@
       color: inherit;
       min-width: 220px;
     }
-    .mark{
-      width: 34px;
-      height: 34px;
-      border-radius: 10px;
-      background:
-        radial-gradient(12px 12px at 30% 30%, rgba(255,255,255,.9), rgba(255,255,255,0) 70%),
-        linear-gradient(135deg, rgba(46,116,255,.35), rgba(22,190,170,.25)),
-        linear-gradient(180deg, rgba(244,212,75,.55), rgba(244,212,75,.25));
-      border: 1px solid rgba(17,19,23,.10);
+    .avatar{
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 1px solid rgba(17,19,23,.12);
       box-shadow: 0 10px 22px rgba(17,19,23,.10);
+      background: rgba(255,255,255,.9);
     }
     .brand h1{
       font-size: 14px;
@@ -179,6 +177,26 @@
     }
 
     /* Hero */
+    .hero-head{
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .hero-avatar{
+      width: 84px;
+      height: 84px;
+      border-radius: 999px;
+      object-fit: cover;
+      border: 1px solid rgba(17,19,23,.12);
+      background: rgba(255,255,255,.9);
+      box-shadow: 0 14px 28px rgba(17,19,23,.10);
+    }
+    @media (max-width: 520px){
+      .hero-avatar{ width: 72px; height: 72px; }
+    }
+
+    /* Hero */
     .hero{
       padding: 22px 0 10px;
     }
@@ -260,6 +278,19 @@
       position: relative;
       overflow: hidden;
       min-height: 320px;
+    }
+
+    /* Legacy mark (kept for reference; not used once avatar is in place) */
+    .mark{
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background:
+        radial-gradient(12px 12px at 30% 30%, rgba(255,255,255,.9), rgba(255,255,255,0) 70%),
+        linear-gradient(135deg, rgba(46,116,255,.35), rgba(22,190,170,.25)),
+        linear-gradient(180deg, rgba(244,212,75,.55), rgba(244,212,75,.25));
+      border: 1px solid rgba(17,19,23,.10);
+      box-shadow: 0 10px 22px rgba(17,19,23,.10);
     }
 
     /* A simple “front page” inspired illustration */
@@ -611,7 +642,7 @@
   <header class="nav">
     <div class="nav-inner">
       <a class="brand" href="#top" aria-label="Go to top">
-        <div class="mark" aria-hidden="true"></div>
+        <img class="avatar" src="https://raw.githubusercontent.com/ematarti/graph-ai-portfolio/refs/heads/main/Photo.png" alt="Portrait avatar" loading="lazy" decoding="async" />
         <div>
           <h1>Emanuele</h1>
           <p>GenAI for Work & Research • Portfolio</p>
@@ -636,7 +667,10 @@
     <section class="hero section" aria-label="Hero">
       <div class="hero-grid">
         <div class="card hero-left">
-          <div class="kicker"><span class="dot" aria-hidden="true"></span> Generative AI for Work & Research</div>
+          <div class="hero-head">
+            <img class="hero-avatar" src="https://raw.githubusercontent.com/ematarti/graph-ai-portfolio/refs/heads/main/Photo.png" alt="Portrait of Emanuele" loading="lazy" decoding="async" />
+            <div class="kicker"><span class="dot" aria-hidden="true"></span> Generative AI for Work & Research</div>
+          </div>
           <h2>Responsible, no‑code AI workflows for real‑world research and operations.</h2>
           <p class="lead">
             This page collects my learning journey through an 8‑week live cohort course focused on practical GenAI skills:
