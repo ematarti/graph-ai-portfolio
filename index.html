@@ -618,6 +618,45 @@
       margin-top: auto;
     }
 
+    /* Consultation / Contact section */
+    .consult{
+      padding: 0 0 24px;
+    }
+    .consult-grid{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+      padding: 0 24px 8px;
+    }
+    .consult .box{
+      border-radius: var(--r-md);
+      border: 1px solid var(--line);
+      background:
+        radial-gradient(900px 260px at 20% 0%, rgba(244,212,75,.26), rgba(244,212,75,0) 55%),
+        rgba(255,255,255,.78);
+      padding: 16px;
+    }
+    .consult .box p{
+      margin: 0 0 12px;
+      color: rgba(17,19,23,.74);
+      font-weight: 600;
+      font-size: 13px;
+      max-width: 80ch;
+    }
+    .form-wrap{
+      border-radius: 16px;
+      border: 1px solid rgba(17,19,23,.10);
+      background: rgba(255,255,255,.92);
+      overflow: hidden;
+    }
+    .form-frame{
+      width: 100%;
+      height: 820px;
+      border: 0;
+      display: block;
+      background: #fff;
+    }
+
     /* Footer */
     footer{
       margin-top: 26px;
@@ -636,12 +675,14 @@
       .strip{ grid-template-columns: 1fr; }
       .rubric{ grid-template-columns: 1fr; }
       .weeks-grid{ grid-template-columns: repeat(2, 1fr); }
+      .form-frame{ height: 900px; }
     }
     @media (max-width: 520px){
       .nav-links{ gap: 8px; justify-content: flex-end; }
       .nav-links a{ padding: 8px 8px; }
       .hero-left{ padding: 22px; }
       .weeks-grid{ grid-template-columns: 1fr; }
+      .form-frame{ height: 980px; }
     }
   </style>
 </head>
@@ -662,11 +703,12 @@
         <a href="#about">About</a>
         <a href="#course">Course</a>
         <a href="#submissions">Weekly work</a>
+        <a href="#consultation">Consultation</a>
       </nav>
 
       <div class="cta" aria-hidden="false">
         <a class="btn" href="#course">Explore modules</a>
-        <a class="btn primary" href="#submissions">View weeks</a>
+        <a class="btn primary" href="#consultation">Book consultation</a>
       </div>
     </div>
   </header>
@@ -704,6 +746,7 @@
           <div class="hero-actions">
             <a class="btn primary" href="#submissions" aria-label="Jump to weekly submissions">Weekly submissions</a>
             <a class="btn" href="#about" aria-label="Learn more about me">About me</a>
+            <a class="btn" href="#consultation" aria-label="Contact for consultation">Contact for consultation</a>
           </div>
         </div>
       </div>
@@ -973,6 +1016,38 @@
       </div>
     </section>
 
+    <!-- CONTACT FOR CONSULTATION -->
+    <section id="consultation" class="section card consult" aria-label="Contact for Consultation">
+      <div class="sec-h">
+        <div>
+          <h3>Contact for Consultation</h3>
+          <p>Send a request — I’ll reply with availability and next steps.</p>
+        </div>
+        <p>Form</p>
+      </div>
+
+      <div class="consult-grid">
+        <div class="box" aria-label="Consultation form container">
+          <p>
+            Please use the form below to share your goals and context. This helps me prepare and respond faster.
+          </p>
+
+          <div class="form-wrap">
+            <iframe
+              class="form-frame"
+              title="Consultation request form"
+              src="https://docs.google.com/forms/d/e/1FAIpQLScqiW8qByndUIUHljBL29Iu1IXhlOeL7U1fo9n45oioj9vBtw/viewform?embedded=true"
+              width="640"
+              height="780"
+              frameborder="0"
+              marginheight="0"
+              marginwidth="0"
+            >Loading…</iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <footer>
       Built as a single, lightweight HTML file (no frameworks). No email shown to reduce spam.
     </footer>
@@ -984,6 +1059,7 @@
       { id: 'about', link: document.querySelector('a[href="#about"]') },
       { id: 'course', link: document.querySelector('a[href="#course"]') },
       { id: 'submissions', link: document.querySelector('a[href="#submissions"]') },
+      { id: 'consultation', link: document.querySelector('a[href="#consultation"]') },
     ];
 
     const io = new IntersectionObserver((entries) => {
